@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Madness Entertainment - Malawi's Premier Group</title>
+	<!-- Load Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- Load Inter Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+	<!-- Load Font Awesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8yKjIlIS66zYfD5iN31f3c3R9pD7X3d8x18+gWjR4uCq3Mh08fN3Jg9F5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		/* Flat Design Color Palette */
+		:root {
+			--color-primary: #e53e3e; /* A flat, vibrant red */
+			--color-dark-base: #0a0a0a; /* Darker base for a deeper look */
+			--color-dark-surface: #151515; /* Darker surface for better blending */
+			--color-text-light: #ffffff;
+			--color-text-subtle: #a0aec0;
+		}
+
+		body {
+			font-family: 'Inter', sans-serif;
+			background-color: var(--color-dark-base);
+			min-height: 100vh;
+		}
+		
+		/* Flatter Hero Section */
+		.hero-section {
+			min-height: calc(100vh - 64px); /* Full height minus navbar */
+		}
+		
+		/* Flat Card Style for Artists */
+		.artist-card-flat {
+			transition: transform 0.2s ease, background-color 0.2s ease;
+			cursor: pointer;
+			border: 2px solid transparent;
+		}
+		.artist-card-flat:hover {
+			transform: translateY(-3px);
+			border-color: var(--color-primary); /* Highlight with primary color on hover */
+			background-color: #272727; 
+		}
+
+		/* --- Custom Styles for Modern Artist Profile --- */
+		.artist-image-container {
+			position: relative;
+			/* Defined dimensions via Tailwind for responsiveness: w-64 h-80 */
+			overflow: hidden;
+		}
+
+		.artist-image-container img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: top; /* Focus face at the top */
+		}
+
+		/* Gradient fade effect to blend image bottom into the dark background */
+		.image-fade-overlay {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 40%; /* Height of the fade */
+			/* Blend into the main page body color (now darker) */
+			background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, var(--color-dark-base) 90%);
+		}
+		/* --- End Custom Styles --- */
+
+		/* Mobile adjustments for hero section */
+		@media (max-width: 640px) {
+			.hero-section {
+				min-height: auto; 
+			}
+		}
+	</style>
+</head>
+<body class="bg-[var(--color-dark-base)] text-[var(--color-text-light)]">
+
+	<!-- Navigation Bar -->
+	<nav class="sticky top-0 z-50 bg-[var(--color-dark-base)] border-b-2 border-[var(--color-primary)]">
+		<div class="max-w-7xl mx-auto px-4">
+			<div class="flex justify-between items-center h-16">
+				<a href="#" onclick="navigateTo('home')" class="text-xl sm:text-2xl font-bold tracking-wider uppercase text-[var(--color-primary)]">Madness Ent.</a>
+				
+				<div class="hidden sm:ml-6 sm:flex sm:space-x-4 text-sm">
+					<a href="#" onclick="navigateTo('artists')" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">Artists</a>
+					<a href="[INSERT_URL_HERE]" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">Music</a>
+					<a href="[INSERT_URL_HERE]" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">News</a>
+					<a href="#" onclick="navigateTo('contact')" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">Contact</a>
+				</div>
+				
+				<button onclick="showBookingModal()" class="bg-[var(--color-primary)] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-600 transition shadow-none focus:outline-none">
+					<i class="fa-solid fa-calendar-check mr-2"></i> Book Now
+				</button>
+			</div>
+		</div>
+	</nav>
+	
+	<!-- Main Content Container for Page Switching -->
+	<main id="main-content-container">
+
+		<!-- 1. Home Section -->
+		<section id="home" class="hero-section flex flex-col block">
+			
+			<!-- REPOSITIONED: Centered Logo Block -->
+			<div class="bg-black py-8 md:py-12 text-white text-center">
+				<!-- ADJUSTED: Font size reduced to prevent cutoff and better fit on mobile -->
+				<p class="text-6xl md:text-7xl font-serif tracking-widest leading-none mb-4">M<span class="text-[var(--color-primary)] text-5xl md:text-6xl">Δ</span>DNESS</p>
+				<p class="text-xl md:text-2xl tracking-widest text-gray-400">ENTERTAINMENT</p>
+				<img src="https://placehold.co/400x400/000000/ffffff?text=MADNESS+LOGO" onerror="this.style.display='none'" class="hidden" alt="Madness Logo Placeholder">
+			</div>
+
+			<!-- Content Block (was the left column) -->
+			<div class="flex-1 bg-[var(--color-dark-surface)] flex items-center p-6 md:p-10">
+				<div class="max-w-xl mx-auto space-y-6 text-center">
+					<h1 class="text-4xl md:text-6xl font-extrabold leading-snug">
+						Unleash Your <span class="text-[var(--color-primary)]">Inner Madness</span>
+					</h1>
+					<p class="text-md text-[var(--color-text-subtle)]">
+						Discover Malawi's Premier Entertainment Group, a collective of talented artists, entertainers, and strategic influencers dedicated to authentic sound and unforgettable performances.
+					</p>
+
+					<div class="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4 pt-4 justify-center">
+						<a href="#" onclick="navigateTo('artists')" class="bg-white text-black font-semibold px-5 py-3 rounded-lg hover:bg-gray-300 transition text-center shadow-none">
+							Explore Our Artists
+						</a>
+						<button onclick="showModal('about-madness')" class="border-2 border-white text-white font-semibold px-5 py-3 rounded-lg hover:bg-gray-800 transition text-center shadow-none">
+							Watch Latest Videos
+						</button>
+					</div>
+
+					<div class="grid grid-cols-3 gap-4 text-center pt-6 border-t border-gray-700 mt-6">
+						<div>
+							<i class="fa-solid fa-layer-group text-xl mb-1 text-[var(--color-primary)]"></i>
+							<p class="text-xs text-gray-400">Diverse Talent</p>
+						</div>
+						<div>
+							<i class="fa-solid fa-calendar-alt text-xl mb-1 text-[var(--color-primary)]"></i>
+							<p class="text-xs text-gray-400">Book Anytime</p>
+						</div>
+						<div>
+							<i class="fa-solid fa-bolt text-xl mb-1 text-[var(--color-primary)]"></i>
+							<p class="text-xs text-gray-400">Pure Energy</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 2. Artists List Section -->
+		<section id="artists" class="py-16 px-4 sm:px-6 bg-[var(--color-dark-base)] hidden">
+			<div class="max-w-7xl mx-auto">
+				<h2 class="text-3xl font-extrabold mb-8 text-center text-white border-b-2 border-gray-700 inline-block pb-2 mx-auto">Our Talents <i class="fa-solid fa-microphone-alt ml-2 text-[var(--color-primary)]"></i></h2>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+					
+					<!-- JAEKEV Card -->
+					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'JAEKEV')">
+						<div class="w-full h-48 bg-gray-700 rounded-lg mb-4 overflow-hidden relative">
+							<!-- Image URL Placeholder -->
+							<img src="[INSERT_URL_HERE]" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=JAEKEV'" alt="JAEKEV" class="w-full h-full object-cover">
+							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Management</span>
+						</div>
+						<h3 class="text-xl font-bold text-white">JAEKEV</h3>
+						<p class="text-sm text-[var(--color-primary)] mb-2">Lead Manager</p>
+						<p class="text-gray-400 text-sm line-clamp-3 mb-4">The core strategist and lead manager, ensuring all business operations and artist careers are handled with precision and vision.</p>
+						<span class="flex items-center text-sm font-semibold text-white hover:text-[var(--color-primary)] transition focus:outline-none">
+							View Profile <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+						</span>
+					</div>
+
+					<!-- CHARIZMA Card -->
+					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'CHARIZMA')">
+						<div class="w-full h-48 bg-purple-700 rounded-lg mb-4 overflow-hidden relative">
+							<!-- Image URL Placeholder -->
+							<img src="[INSERT_URL_HERE]" onerror="this.src='https://placehold.co/400x300/4c1d95/ffffff?text=CHARIZMA'" alt="Charizma Madness" class="w-full h-full object-cover">
+							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Artist/Founder</span>
+						</div>
+						<h3 class="text-xl font-bold text-white">Charizma Madness</h3>
+						<p class="text-sm text-[var(--color-primary)] mb-2">Artist & Founder</p>
+						<p class="text-gray-400 text-sm line-clamp-3 mb-4">A lyrical maestro and co-founder, Charizma sets the artistic standard for the group with his versatile style and industry knowledge.</p>
+						<span class="flex items-center text-sm font-semibold text-white hover:text-[var(--color-primary)] transition focus:outline-none">
+							View Profile <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+						</span>
+					</div>
+
+					<!-- DUAL Card -->
+					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'DUAL')">
+						<div class="w-full h-48 bg-green-700 rounded-lg mb-4 overflow-hidden relative">
+							<!-- Image URL Placeholder -->
+							<img src="[INSERT_URL_HERE]" onerror="this.src='https://placehold.co/400x300/065f46/ffffff?text=DUAL'" alt="Aidfest & Kineo" class="w-full h-full object-cover">
+							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Dual Artists</span>
+						</div>
+						<h3 class="text-xl font-bold text-white">Aidfest & Kineo</h3>
+						<p class="text-sm text-[var(--color-primary)] mb-2">Dynamic Duo</p>
+						<p class="text-gray-400 text-sm line-clamp-3 mb-4">This dual pair brings a fresh, explosive combination of melodies and sharp rhythmic delivery to the Malawian music landscape.</p>
+						<span class="flex items-center text-sm font-semibold text-white hover:text-[var(--color-primary)] transition focus:outline-none">
+							View Profile <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+						</span>
+					</div>
+
+					<!-- JOE ICON Card -->
+					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'JOE_ICON')">
+						<div class="w-full h-48 bg-red-700 rounded-lg mb-4 overflow-hidden relative">
+							<!-- Image URL Placeholder -->
+							<img src="[INSERT_URL_HERE]" onerror="this.src='https://placehold.co/400x300/b91c1c/ffffff?text=JOE+ICON'" alt="Joe Icon" class="w-full h-full object-cover">
+							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Solo Artist</span>
+						</div>
+						<h3 class="text-xl font-bold text-white">Joe Icon</h3>
+						<p class="text-sm text-[var(--color-primary)] mb-2">Solo Sensation</p>
+						<p class="text-gray-400 text-sm line-clamp-3 mb-4">A powerful solo artist known for his emotional vocals and ability to craft chart-topping singles across diverse music genres.</p>
+						<span class="flex items-center text-sm font-semibold text-white hover:text-[var(--color-primary)] transition focus:outline-none">
+							View Profile <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+						</span>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. Artist Detail Page (Dynamically Generated) -->
+		<section id="artist_detail" class="py-16 px-4 sm:px-6 bg-[var(--color-dark-base)] hidden">
+			<div class="max-w-7xl mx-auto">
+				<button onclick="navigateTo('artists')" class="mb-6 flex items-center text-[var(--color-text-subtle)] hover:text-white transition">
+					<i class="fa-solid fa-arrow-left mr-2"></i> Back to Artists
+				</button>
+				<div id="artist-detail-content">
+					<!-- Content will be injected here by JS -->
+				</div>
+			</div>
+		</section>
+
+		<!-- 4. Contact Section -->
+		<section id="contact" class="py-16 px-4 sm:px-6 bg-[var(--color-dark-base)] hidden">
+			<div class="max-w-7xl mx-auto text-center">
+				<h2 class="text-3xl font-extrabold mb-8 text-white border-b-2 border-gray-700 inline-block pb-2 mx-auto">Get in Touch</h2>
+				<p class="text-lg text-[var(--color-text-subtle)] max-w-2xl mx-auto mb-10">We'd love to hear from you. Whether it's a booking inquiry, media request, or just a fan message, connect with us!</p>
+				
+				<div class="bg-[var(--color-dark-surface)] rounded-xl max-w-xl mx-auto p-6 md:p-10 space-y-4">
+					 <h3 class="text-2xl font-bold text-[var(--color-primary)] mb-4">Send Us a Message</h3>
+					 <form onsubmit="event.preventDefault(); submitContactForm();" class="space-y-4">
+						<input type="text" placeholder="Your Name" required class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]">
+						<input type="email" placeholder="Your Email" required class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]">
+						<textarea rows="4" placeholder="Your Message or Inquiry" required class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]"></textarea>
+						<button type="submit" class="w-full bg-[var(--color-primary)] text-white font-bold p-3 rounded-lg hover:bg-red-600 transition shadow-none">
+							<i class="fa-solid fa-paper-plane mr-2"></i> Send Message
+						</button>
+					</form>
+					<div id="contact-message" class="text-green-400 mt-4 hidden"></div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	
+	<!-- Footer -->
+	<footer class="bg-black py-8 px-4 sm:px-6 border-t border-gray-800">
+		<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-400">
+			<p class="mb-4 md:mb-0 text-sm text-center">&copy; 2025 Madness Entertainment. All rights reserved.</p>
+			<!-- Updated Social Media Links for Madness Entertainment -->
+			<div class="flex space-x-6 text-xl">
+				<a href="[INSERT_URL_HERE]" target="_blank" aria-label="TikTok" class="hover:text-gray-300 transition"><i class="fab fa-tiktok"></i></a>
+				<a href="[INSERT_URL_HERE]" target="_blank" aria-label="YouTube" class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
+				<!-- Updated: Placeholder base link changed to https://facebook.com/ -->
+				<a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+				<a href="[INSERT_URL_HERE]" target="_blank" aria-label="Twitter" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+				<a href="[INSERT_URL_HERE]" target="_blank" aria-label="Instagram" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Booking Modal (Kept as a Modal since it's a form/action) -->
+	<div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center p-4" onclick="if(event.target.id === 'booking-modal') hideModal('booking-modal')">
+		<div class="bg-[var(--color-dark-surface)] rounded-xl w-full max-w-md p-6 md:p-8 transform transition-all duration-300 scale-95 opacity-0 relative overflow-y-auto max-h-[90vh]" id="booking-modal-content">
+			<button onclick="hideModal('booking-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl z-10">&times;</button>
+			<h2 class="text-3xl font-extrabold mb-6 border-b border-gray-700 pb-2 text-[var(--color-primary)]">Book an Artist 📅</h2>
+			
+			<form onsubmit="event.preventDefault(); submitBookingForm();" class="space-y-4">
+				<div>
+					<label for="artist-select" class="block text-sm font-medium text-gray-300 mb-1">Select Artist/Manager</label>
+					<select id="artist-select" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]" required>
+						<option value="">-- Choose Talent --</option>
+						<option value="JAEKEV">JAEKEV (Management)</option>
+						<option value="CHARIZMA">Charizma Madness</option>
+						<option value="DUAL">Aidfest & Kineo (Duo)</option>
+						<option value="JOE_ICON">Joe Icon</option>
+					</select>
+				</div>
+				<div>
+					<label for="event-date" class="block text-sm font-medium text-gray-300 mb-1">Event Date</label>
+					<input type="date" id="event-date" required class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]">
+				</div>
+				<div>
+					<label for="event-venue" class="block text-sm font-medium text-gray-300 mb-1">Event Venue/Location</label>
+					<input type="text" id="event-venue" required placeholder="e.g., Bingu International Convention Centre" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]">
+				</div>
+				<div>
+					<label for="contact-email" class="block text-sm font-medium text-gray-300 mb-1">Contact Email</label>
+					<input type="email" id="contact-email" required placeholder="you@example.com" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]">
+				</div>
+				<div class="pt-2">
+					<button type="submit" class="w-full bg-[var(--color-primary)] text-white font-bold p-3 rounded-lg hover:bg-red-600 transition shadow-none">
+						Send Booking Request
+					</button>
+				</div>
+			</form>
+			<div id="booking-message" class="text-green-400 mt-4 text-center hidden"></div>
+			<p class="text-xs text-gray-500 mt-4 text-center">A representative will contact you within 24 hours.</p>
+		</div>
+	</div>
+
+	<!-- General Info Modal (for "Watch Latest Videos" link) -->
+	 <div id="general-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center p-4" onclick="if(event.target.id === 'general-modal') hideModal('general-modal')">
+		<div class="bg-[var(--color-dark-surface)] rounded-xl w-full max-w-lg p-6 md:p-8 transform transition-all duration-300 scale-95 opacity-0 relative overflow-y-auto max-h-[90vh]" id="general-modal-content">
+			<button onclick="hideModal('general-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl z-10">&times;</button>
+			<div id="general-modal-body" class="text-white">
+				<!-- Content injected here -->
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// --- DATA STRUCTURE ---
+		const ARTIST_DATA = {
+			'JAEKEV': {
+				name: 'JAEKEV',
+				role: 'Lead Manager & Content Creator',
+				bio: 'JAEKEV is the strategic mind guiding Madness Entertainment\'s operations. He focuses on brand vision and content production, especially for YouTube and digital platforms. His leadership is key to the group\'s rapid growth and professional standing in the Malawian music industry.',
+				image: '[INSERT_JAEKEV_PROFILE_IMAGE_URL_HERE]', // Placeholder URL
+				imagePlaceholder: 'https://placehold.co/400x600/27272a/ffffff?text=JAEKEV',
+				type: 'management',
+				latestContent: [
+					{ title: 'The 5 Biggest Mistakes Malawian Artists Make (Video)', link: '[INSERT_VIDEO_LINK_HERE]', icon: 'fab fa-youtube' },
+					{ title: 'Behind the Scenes: Charizma\'s New Album (Blog)', link: '[INSERT_BLOG_LINK_HERE]', icon: 'fa-solid fa-file-lines' },
+					{ title: 'Podcast: Marketing Music in Africa', link: '[INSERT_PODCAST_LINK_HERE]', icon: 'fa-solid fa-microphone-lines' },
+					{ title: 'How We Built Madness Ent. (E-book)', link: '[INSERT_EBOOK_LINK_HERE]', icon: 'fa-solid fa-book' },
+				],
+				// Placeholder embed for latest YouTube video
+				latestVideoEmbed: `<iframe class="w-full aspect-video rounded-xl shadow-2xl" src="[INSERT_YOUTUBE_EMBED_URL_HERE]" title="JAEKEV YouTube Placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+				socials: [
+					{ platform: 'Twitter', icon: 'fab fa-twitter', link: '[INSERT_TWITTER_URL_HERE]' },
+					{ platform: 'LinkedIn', icon: 'fab fa-linkedin-in', link: '[INSERT_LINKEDIN_URL_HERE]' },
+					{ platform: 'YouTube', icon: 'fab fa-youtube', link: '[INSERT_YOUTUBE_URL_HERE]' },
+				],
+				streaming: []
+			},
+			'CHARIZMA': {
+				name: 'Charizma Madness',
+				role: 'Artist & Co-Founder',
+				bio: 'A founding artist and creative powerhouse, Charizma Madness is known for his versatile style and lyrical depth. He successfully blends traditional Malawian rhythms with modern hip-hop and R&B, making him one of the most respected voices in the collective. He actively mentors emerging talent within Madness Entertainment.',
+				image: '[INSERT_CHARIZMA_PROFILE_IMAGE_URL_HERE]', // Placeholder URL
+				imagePlaceholder: 'https://placehold.co/400x600/4c1d95/ffffff?text=CHARIZMA',
+				type: 'artist',
+				latestMusic: {
+					title: 'Nthawi Yanga (My Time)',
+					// Spotify Placeholder Embed
+					embed: `<iframe class="w-full rounded-xl shadow-2xl" style="border:0;" src="[INSERT_SPOTIFY_EMBED_URL_HERE]" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+				},
+				socials: [
+					// Updated: Placeholder base link changed to https://facebook.com/
+					{ platform: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://facebook.com/' }, 
+					{ platform: 'Instagram', icon: 'fab fa-instagram', link: '[INSERT_INSTAGRAM_URL_HERE]' },
+					{ platform: 'TikTok', icon: 'fab fa-tiktok', link: '[INSERT_TIKTOK_URL_HERE]' },
+				],
+				streaming: [
+					{ platform: 'Spotify', icon: 'fab fa-spotify', link: '[INSERT_SPOTIFY_URL_HERE]' },
+					{ platform: 'Apple Music', icon: 'fab fa-apple', link: '[INSERT_APPLE_MUSIC_URL_HERE]' }
+				]
+			},
+			'DUAL': {
+				name: 'Aidfest & Kineo',
+				role: 'Dual Pair Artists',
+				bio: 'Aidfest and Kineo form the explosive dual pair of Madness Entertainment. Their collaborative dynamic features Aidfest\'s melodic finesse and Kineo\'s sharp, rhythmic delivery, resulting in hit singles and energetic live performances. They are masters of blending different musical landscapes.',
+				image: '[INSERT_DUAL_PROFILE_IMAGE_URL_HERE]', // Placeholder URL
+				imagePlaceholder: 'https://placehold.co/400x600/065f46/ffffff?text=DUO',
+				type: 'artist',
+				latestMusic: {
+					title: 'Wadula Remix (The Breakout)',
+					// SoundCloud Placeholder Embed
+					embed: `<iframe class="w-full rounded-xl shadow-2xl" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="[INSERT_SOUNDCLOUD_EMBED_URL_HERE]"></iframe>`
+				},
+				socials: [
+					// Updated: Separated links for Aidfest and Kineo with https://facebook.com/ base
+					{ platform: 'Aidfest (FB)', icon: 'fab fa-facebook-f', link: 'https://facebook.com/' },
+					{ platform: 'Kineo (FB)', icon: 'fab fa-facebook-f', link: 'https://facebook.com/' },
+					{ platform: 'Aidfest (IG)', icon: 'fab fa-instagram', link: '[INSERT_AIDFEST_INSTAGRAM_URL_HERE]' },
+					{ platform: 'Kineo (IG)', icon: 'fab fa-instagram', link: '[INSERT_KINEO_INSTAGRAM_URL_HERE]' },
+					{ platform: 'Dual Twitter', icon: 'fab fa-twitter', link: '[INSERT_TWITTER_URL_HERE]' },
+				],
+				streaming: [
+					{ platform: 'YouTube', icon: 'fab fa-youtube', link: '[INSERT_YOUTUBE_URL_HERE]' },
+					{ platform: 'SoundCloud', icon: 'fab fa-soundcloud', link: '[INSERT_SOUNDCLOUD_URL_HERE]' }
+				]
+			},
+			'JOE_ICON': {
+				name: 'Joe Icon',
+				role: 'Solo Sensation',
+				bio: 'Joe Icon is the highly acclaimed solo artist signed to the team. His music is characterized by profound storytelling, catchy pop sensibilities, and a powerful, unique vocal tone. He represents the future sound of Malawian contemporary music.',
+				image: '[INSERT_JOE_ICON_PROFILE_IMAGE_URL_HERE]', // Placeholder URL
+				imagePlaceholder: 'https://placehold.co/400x600/b91c1c/ffffff?text=JOE',
+				type: 'artist',
+				latestMusic: {
+					title: 'Ndikhulupirire (Believe Me)',
+					// Apple Music Placeholder Embed
+					embed: `<iframe class="w-full rounded-xl shadow-2xl" allow="autoplay *; encrypted-media *;  fullscreen *; clipboard-write" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="[INSERT_APPLE_MUSIC_EMBED_URL_HERE]"></iframe>`
+				},
+				socials: [
+					// Updated: Placeholder base link changed to https://facebook.com/
+					{ platform: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://facebook.com/' }, 
+					{ platform: 'Instagram', icon: 'fab fa-instagram', link: '[INSERT_INSTAGRAM_URL_HERE]' },
+				],
+				streaming: [
+					{ platform: 'Spotify', icon: 'fab fa-spotify', link: '[INSERT_SPOTIFY_URL_HERE]' },
+					{ platform: 'SoundCloud', icon: 'fab fa-soundcloud', link: '[INSERT_SOUNDCLOUD_URL_HERE]' }
+				]
+			},
+			'about-madness': {
+				name: 'The Madness Entertainment Journey',
+				content: `<h3 class="text-3xl font-bold mb-4 text-[var(--color-primary)]">Our Mission and Vision</h3>
+						<p class="text-gray-300 mb-4">Madness Entertainment was founded on the principle of showcasing the vibrant and diverse creative talent within Malawi to the world. We are more than just a label; we are a family committed to nurturing raw talent and providing a professional platform for artists to thrive.</p>
+						<p class="text-gray-300">From humble beginnings to becoming a recognized force in the region, our journey is defined by passion, dedication, and an unwavering commitment to quality in both management and artistic output.</p>`
+			}
+		};
+
+		let currentState = 'home';
+		const sections = {
+			'home': document.getElementById('home'),
+			'artists': document.getElementById('artists'),
+			'artist_detail': document.getElementById('artist_detail'),
+			'contact': document.getElementById('contact')
+		};
+		const artistDetailContent = document.getElementById('artist-detail-content');
+		const bookingModalElement = document.getElementById('booking-modal');
+		const bookingModalContent = document.getElementById('booking-modal-content');
+		const generalModalElement = document.getElementById('general-modal');
+		const generalModalContent = document.getElementById('general-modal-content');
+		const generalModalBody = document.getElementById('general-modal-body');
+
+		// --- NAVIGATION AND VIEW MANAGEMENT ---
+
+		/**
+		 * Switches the view between main sections (home, artists, artist_detail, contact).
+		 * @param {string} view - The ID of the section to show.
+		 * @param {string} [artistKey=null] - Optional key for artist detail page generation.
+		 */
+		function navigateTo(view, artistKey = null) {
+			if (!sections[view]) return;
+
+			// Hide all sections
+			Object.values(sections).forEach(section => {
+				section.classList.add('hidden');
+				section.classList.remove('block');
+			});
+			
+			// Show the target section
+			sections[view].classList.remove('hidden');
+			sections[view].classList.add('block');
+			currentState = view;
+
+			// Generate content if it's an artist detail page
+			if (view === 'artist_detail' && artistKey && ARTIST_DATA[artistKey]) {
+				artistDetailContent.innerHTML = generateArtistDetailPage(ARTIST_DATA[artistKey]);
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			} else if (view !== 'artist_detail') {
+				 // Scroll to top when switching main views
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
+		}
+
+		/**
+		 * Generates the HTML for the dedicated artist detail page.
+		 * @param {object} data - The artist's data object.
+		 * @returns {string} The HTML string.
+		 */
+		function generateArtistDetailPage(data) {
+			let html = `
+				<div class="space-y-10">
+					<!-- Header Section -->
+					<div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left p-6 bg-[var(--color-dark-surface)] rounded-xl shadow-xl">
+						
+						<!-- NEW MODERN IMAGE CONTAINER -->
+						<div class="md:mr-8 mb-6 md:mb-0 w-full max-w-xs sm:max-w-sm">
+							<!-- REMOVED: Red border from artist image container -->
+							<div class="artist-image-container w-full h-80 sm:h-96 rounded-xl">
+								<!-- Image URL Placeholder: uses the placeholder image if the user hasn't inserted a URL yet -->
+								<img src="${data.image}" onerror="this.src='${data.imagePlaceholder}'" alt="${data.name}" class="object-cover w-full h-full">
+								<div class="image-fade-overlay"></div>
+							</div>
+						</div>
+
+						<!-- Text Content -->
+						<div class="flex-1 pt-4">
+							<h1 class="text-4xl md:text-6xl font-extrabold text-white">${data.name}</h1>
+							<p class="text-xl text-[var(--color-primary)] mt-1 mb-4">${data.role}</p>
+							<p class="text-gray-300 mt-4 leading-relaxed">${data.bio}</p>
+							<button onclick="showBookingModal()" class="mt-6 bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-red-600 transition shadow-none focus:outline-none">
+								<i class="fa-solid fa-microphone-alt mr-2"></i> Book ${data.name.split(' ')[0]}
+							</button>
+						</div>
+					</div>
+					
+					<!-- Content/Media Section -->
+					<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+						
+						<!-- Media Player (JAEKEV: Video / Artists: Music) -->
+						<div class="lg:col-span-2 bg-[var(--color-dark-surface)] p-6 rounded-xl shadow-xl">
+							<h3 class="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">${data.type === 'management' ? 'Latest YouTube Content' : 'Latest Music Preview'}</h3>
+							<div class="w-full ${data.type === 'management' ? 'aspect-video' : ''}">
+								${data.type === 'management' ? data.latestVideoEmbed : data.latestMusic.embed}
+							</div>
+							${data.type === 'artist' ? `<p class="text-lg text-gray-300 mt-4">Track: <span class="text-[var(--color-primary)] font-semibold">${data.latestMusic.title}</span></p>` : ''}
+						</div>
+
+						<!-- Side Panel: Links & Socials -->
+						<div class="lg:col-span-1 space-y-8">
+							
+							<!-- Connect -->
+							<div class="bg-[var(--color-dark-surface)] p-6 rounded-xl shadow-xl">
+								<h3 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Connect with ${data.name}</h3>
+								<div class="flex flex-wrap gap-3">
+									${data.socials.map(s => `
+										<a href="${s.link}" target="_blank" class="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-full transition text-sm">
+											<i class="${s.icon}"></i>
+											<span>${s.platform}</span>
+										</a>
+									`).join('')}
+								</div>
+							</div>
+
+							<!-- Streaming (Only for Artists) -->
+							${data.type === 'artist' && data.streaming.length > 0 ? `
+							<div class="bg-[var(--color-dark-surface)] p-6 rounded-xl shadow-xl">
+								<h3 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Stream Now</h3>
+								<div class="flex flex-wrap gap-3">
+									${data.streaming.map(s => `
+										<a href="${s.link}" target="_blank" class="flex items-center space-x-2 bg-white text-black font-semibold hover:bg-gray-200 px-4 py-2 rounded-full transition text-sm">
+											<i class="${s.icon}"></i>
+											<span>${s.platform}</span>
+										</a>
+									`).join('')}
+								</div>
+							</div>` : ''}
+
+							<!-- Latest Content Links (Only for JAEKEV) -->
+							${data.type === 'management' && data.latestContent.length > 0 ? `
+							<div class="bg-[var(--color-dark-surface)] p-6 rounded-xl shadow-xl">
+								<h3 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">More Content</h3>
+								<ul class="space-y-3">
+									${data.latestContent.map(c => `
+										<li>
+											<a href="${c.link}" target="_blank" class="flex items-start text-gray-300 hover:text-[var(--color-primary)] transition">
+												<i class="${c.icon} w-5 mt-1"></i>
+												<span class="ml-3 text-sm">${c.title}</span>
+											</a>
+										</li>
+									`).join('')}
+								</ul>
+							</div>` : ''}
+						</div>
+					</div>
+				</div>
+			`;
+			return html;
+		}
+
+
+		// --- MODAL HANDLERS (for Booking and General Info) ---
+
+		function showBookingModal() {
+			bookingModalElement.classList.remove('hidden');
+			bookingModalElement.classList.add('flex');
+			bookingModalContent.classList.remove('scale-95', 'opacity-0');
+			bookingModalContent.classList.add('scale-100', 'opacity-100');
+		}
+
+		function showModal(contentKey) {
+			if (contentKey && ARTIST_DATA[contentKey]) {
+				generalModalBody.innerHTML = ARTIST_DATA[contentKey].content;
+			} else {
+				return;
+			}
+
+			generalModalElement.classList.remove('hidden');
+			generalModalElement.classList.add('flex');
+			generalModalContent.classList.remove('scale-95', 'opacity-0');
+			generalModalContent.classList.add('scale-100', 'opacity-100');
+		}
+
+		function hideModal(modalId) {
+			let modalElement = document.getElementById(modalId);
+			let modalContent = document.getElementById(modalId + '-content');
+
+			if (!modalElement || !modalContent) return;
+
+			modalContent.classList.remove('scale-100', 'opacity-100');
+			modalContent.classList.add('scale-95', 'opacity-0');
+
+			setTimeout(() => {
+				modalElement.classList.remove('flex');
+				modalElement.classList.add('hidden');
+				// Clear form/message if it's the booking modal
+				if (modalId === 'booking-modal') {
+					document.getElementById('booking-message').classList.add('hidden');
+				}
+			}, 300); // Duration matches transition-all duration-300
+		}
+
+		// --- FORM SUBMISSION HANDLERS (Placeholders) ---
+
+		function submitBookingForm() {
+			// Placeholder logic: In a real app, this would use fetch() to send data
+			const messageElement = document.getElementById('booking-message');
+			messageElement.innerHTML = 'Thank you! Your booking request has been sent. We will contact you soon.';
+			messageElement.classList.remove('hidden');
+			// document.querySelector('#booking-modal form').reset(); // You can uncomment this to clear the form
+		}
+		
+		function submitContactForm() {
+			// Placeholder logic: In a real app, this would use fetch() to send data
+			const messageElement = document.getElementById('contact-message');
+			messageElement.innerHTML = 'Thank you for your message! We will be in touch shortly.';
+			messageElement.classList.remove('hidden');
+			// document.querySelector('#contact form').reset(); // You can uncomment this to clear the form
+		}
+
+
+		// --- INITIALIZATION ---
+		// Ensure the home page is the initial view on load
+		window.onload = function() {
+			navigateTo('home');
+		};
+	</script>
+</body>
+</html>
+
