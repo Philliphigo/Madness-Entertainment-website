@@ -64,7 +64,7 @@
 			left: 0;
 			width: 100%;
 			height: 40%; 
-			/* Refined gradient: starts fully transparent and blends into the dark base */
+			/* Starts fully transparent and blends into the dark base */
 			background: linear-gradient(to bottom, transparent 0%, var(--color-dark-base) 90%);
 		}
 		/* --- End Custom Styles --- */
@@ -177,7 +177,8 @@
 					
 					<!-- JAEKEV Card -->
 					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'JAEKEV')">
-						<div class="w-full h-48 bg-gray-700 rounded-lg mb-4 overflow-hidden relative">
+						<div class="w-full h-64 bg-gray-700 rounded-lg mb-4 overflow-hidden relative">
+							<!-- H-64 applied to fix aspect ratio on list page -->
 							<img src="IMG_2005.jpeg" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=JAEKEV'" alt="JAEKEV" class="w-full h-full object-cover">
 							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Management</span>
 						</div>
@@ -191,7 +192,7 @@
 
 					<!-- CHARIZMA Card -->
 					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'CHARIZMA')">
-						<div class="w-full h-48 bg-purple-700 rounded-lg mb-4 overflow-hidden relative">
+						<div class="w-full h-64 bg-purple-700 rounded-lg mb-4 overflow-hidden relative">
 							<img src="IMG_2006.jpeg" onerror="this.src='https://placehold.co/400x300/4c1d95/ffffff?text=CHARIZMA'" alt="Charizma Madness" class="w-full h-full object-cover">
 							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Artist/Founder</span>
 						</div>
@@ -205,7 +206,7 @@
 
 					<!-- DUAL Card -->
 					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'DUAL')">
-						<div class="w-full h-48 bg-green-700 rounded-lg mb-4 overflow-hidden relative">
+						<div class="w-full h-64 bg-green-700 rounded-lg mb-4 overflow-hidden relative">
 							<img src="IMG_2009.jpeg" onerror="this.src='https://placehold.co/400x300/065f46/ffffff?text=DUAL'" alt="Aidfest & Kineo" class="w-full h-full object-cover">
 							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Dual Artists</span>
 						</div>
@@ -219,7 +220,7 @@
 
 					<!-- JOE ICON Card -->
 					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'JOE_ICON')">
-						<div class="w-full h-48 bg-red-700 rounded-lg mb-4 overflow-hidden relative">
+						<div class="w-full h-64 bg-red-700 rounded-lg mb-4 overflow-hidden relative">
 							<img src="IMG_2003.jpeg" onerror="this.src='https://placehold.co/400x300/b91c1c/ffffff?text=JOE+ICON'" alt="Joe Icon" class="w-full h-full object-cover">
 							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Solo Artist</span>
 						</div>
@@ -274,13 +275,13 @@
 	<footer class="bg-black py-8 px-4 sm:px-6 border-t border-gray-800">
 		<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-400">
 			<p class="mb-4 md:mb-0 text-sm text-center">&copy; 2025 Madness Entertainment. All rights reserved.</p>
-			<!-- Official Social Media Links -->
+			<!-- Official Social Media Links (Updated with provided links) -->
 			<div class="flex space-x-6 text-xl">
-				<a href="[INSERT_TIKTOK_URL_HERE]" target="_blank" aria-label="TikTok" class="hover:text-gray-300 transition"><i class="fab fa-tiktok"></i></a>
-				<a href="https://youtube.com/@madnessentertainment8765?si=52bRoYJoR6cieoI5" target="_blank" aria-label="YouTube" class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
-				<a href="[INSERT_FACEBOOK_URL_HERE]" target="_blank" aria-label="Facebook" class="hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
-				<a href="[INSERT_X_URL_HERE]" target="_blank" aria-label="Twitter (X)" class="hover:text-blue-400 transition"><i class="fab fa-x-twitter"></i></a>
-				<a href="[INSERT_INSTAGRAM_URL_HERE]" target="_blank" aria-label="Instagram" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+				<a href="https://www.tiktok.com/@madnessentertainmentmw?_r=1&_t=ZM-91JEu4ubYJH" target="_blank" aria-label="TikTok" class="hover:text-gray-300 transition"><i class="fab fa-tiktok"></i></a>
+				<a href="https://youtube.com/@madnessentertainment8765?si=8sj3rz7Nt3UpQyok" target="_blank" aria-label="YouTube" class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
+				<a href="https://www.facebook.com/share/14Qh5KWmtQS/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+				<a href="https://x.com/jaakevmadness?s=21" target="_blank" aria-label="Twitter (X)" class="hover:text-blue-400 transition"><i class="fab fa-x-twitter"></i></a>
+				<a href="https://www.instagram.com/jaakev_madness?igsh=MTVqdXc0eHcxZ280Mw==" target="_blank" aria-label="Instagram" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
 			</div>
 		</div>
 	</footer>
@@ -337,7 +338,6 @@
 
 	<script>
 		// --- DATA STRUCTURE (CLEANED AND POLISHED) ---
-		// NOTE: ALL image source links in the ARTIST_DATA object are using your specific .jpeg file names.
 		const ARTIST_DATA = {
 			'JAEKEV': {
 				name: 'JAEKEV',
@@ -357,6 +357,7 @@
 					{ platform: 'X (Twitter)', icon: 'fab fa-x-twitter', link: 'https://x.com/jaakevmadness?s=21' },
 					{ platform: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/share/17GkSGeZNJ/?mibextid=wwXIfr' },
 					{ platform: 'YouTube', icon: 'fab fa-youtube', link: 'https://youtube.com/@madnessentertainment8765?si=52bRoYJoR6cieoI5' },
+					{ platform: 'Instagram', icon: 'fab fa-instagram', link: 'https://www.instagram.com/jaakev_madness?igsh=MTVqdXc0eHcxZ280Mw==' }, // Added Jaekev's IG link
 				],
 				streaming: []
 			},
@@ -377,8 +378,10 @@
 					{ platform: 'TikTok', icon: 'fab fa-tiktok', link: 'https://www.tiktok.com/@charisma_madness?_r=1&_t=ZM-91JCkJRqSE8' },
 				],
 				streaming: [
-					{ platform: 'Spotify (Artist Page)', icon: 'fab fa-spotify', link: 'https://open.spotify.com/artist/66IwLmIgqsJUSkHhQOdCH0?si=EIj4Is5lRuu6VruRnBs8_A' },
-					{ platform: 'Apple Music (Artist Page)', icon: 'fab fa-apple', link: '[INSERT_APPLE_MUSIC_CHARIZMA_URL_HERE]' }
+					// Updated Charizma's Spotify link
+					{ platform: 'Spotify (Artist Page)', icon: 'fab fa-spotify', link: 'https://open.spotify.com/artist/3j4aotLAr7c782XVX82lEa?si=BkbHeL5TRz63BXe0WdvPxw' },
+					// Updated Charizma's Apple Music link
+					{ platform: 'Apple Music (Artist Page)', icon: 'fab fa-apple', link: 'https://music.apple.com/mw/artist/charisma-madness/1440027800' }
 				]
 			},
 			'DUAL': {
