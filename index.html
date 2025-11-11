@@ -9,7 +9,7 @@
 	<!-- Load Inter Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 	<!-- Load Font Awesome Icons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8yKjIlIS66zYfD5iN31f3c3R9pD7X3d8x18+gWjR4uCq3Mh08fN3Jg9F5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style>
 		/* Flat Design Color Palette */
 		:root {
@@ -24,6 +24,7 @@
 			font-family: 'Inter', sans-serif;
 			background-color: var(--color-dark-base);
 			min-height: 100vh;
+			scroll-behavior: smooth;
 		}
 		
 		/* Flatter Hero Section */
@@ -46,7 +47,6 @@
 		/* --- Custom Styles for Modern Artist Profile --- */
 		.artist-image-container {
 			position: relative;
-			/* Defined dimensions via Tailwind for responsiveness: w-64 h-80 */
 			overflow: hidden;
 		}
 
@@ -64,7 +64,7 @@
 			left: 0;
 			width: 100%;
 			height: 40%; /* Height of the fade */
-			/* Blend into the main page body color (now darker) */
+			/* Blend into the main page body color */
 			background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, var(--color-dark-base) 90%);
 		}
 		/* --- End Custom Styles --- */
@@ -87,8 +87,8 @@
 				
 				<div class="hidden sm:ml-6 sm:flex sm:space-x-4 text-sm">
 					<a href="#" onclick="navigateTo('artists')" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">Artists</a>
-					<a href="[INSERT_URL_HERE]" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">Music</a>
-					<a href="[INSERT_URL_HERE]" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">News</a>
+					<a href="[INSERT_MUSIC_URL_HERE]" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">Music</a>
+					<a href="[INSERT_NEWS_URL_HERE]" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">News</a>
 					<a href="#" onclick="navigateTo('contact')" class="text-white hover:text-[var(--color-primary)] px-2 py-2 text-sm font-medium transition">Contact</a>
 				</div>
 				
@@ -107,13 +107,12 @@
 			
 			<!-- REPOSITIONED: Centered Logo Block -->
 			<div class="bg-black py-8 md:py-12 text-white text-center">
-				<!-- ADJUSTED: Font size reduced to prevent cutoff and better fit on mobile -->
 				<p class="text-6xl md:text-7xl font-serif tracking-widest leading-none mb-4">M<span class="text-[var(--color-primary)] text-5xl md:text-6xl">Δ</span>DNESS</p>
 				<p class="text-xl md:text-2xl tracking-widest text-gray-400">ENTERTAINMENT</p>
-				<img src="https://placehold.co/400x400/000000/ffffff?text=MADNESS+LOGO" onerror="this.style.display='none'" class="hidden" alt="Madness Logo Placeholder">
+				<img src="[INSERT_LOGO_URL_HERE]" onerror="this.style.display='none'" class="hidden" alt="Madness Logo Placeholder">
 			</div>
 
-			<!-- Content Block (was the left column) -->
+			<!-- Content Block -->
 			<div class="flex-1 bg-[var(--color-dark-surface)] flex items-center p-6 md:p-10">
 				<div class="max-w-xl mx-auto space-y-6 text-center">
 					<h1 class="text-4xl md:text-6xl font-extrabold leading-snug">
@@ -160,8 +159,8 @@
 					<!-- JAEKEV Card -->
 					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'JAEKEV')">
 						<div class="w-full h-48 bg-gray-700 rounded-lg mb-4 overflow-hidden relative">
-							<!-- Image URL Placeholder -->
-							<img src="[INSERT_URL_HERE]" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=JAEKEV'" alt="JAEKEV" class="w-full h-full object-cover">
+							<!-- NOTE: Use image/IMG_2005.jpeg path for your uploaded file -->
+							<img src="IMG_2005.jpeg" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=JAEKEV'" alt="JAEKEV" class="w-full h-full object-cover">
 							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Management</span>
 						</div>
 						<h3 class="text-xl font-bold text-white">JAEKEV</h3>
@@ -175,8 +174,7 @@
 					<!-- CHARIZMA Card -->
 					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'CHARIZMA')">
 						<div class="w-full h-48 bg-purple-700 rounded-lg mb-4 overflow-hidden relative">
-							<!-- Image URL Placeholder -->
-							<img src="[INSERT_URL_HERE]" onerror="this.src='https://placehold.co/400x300/4c1d95/ffffff?text=CHARIZMA'" alt="Charizma Madness" class="w-full h-full object-cover">
+							<img src="IMG_2006.jpeg" onerror="this.src='https://placehold.co/400x300/4c1d95/ffffff?text=CHARIZMA'" alt="Charizma Madness" class="w-full h-full object-cover">
 							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Artist/Founder</span>
 						</div>
 						<h3 class="text-xl font-bold text-white">Charizma Madness</h3>
@@ -190,8 +188,7 @@
 					<!-- DUAL Card -->
 					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'DUAL')">
 						<div class="w-full h-48 bg-green-700 rounded-lg mb-4 overflow-hidden relative">
-							<!-- Image URL Placeholder -->
-							<img src="[INSERT_URL_HERE]" onerror="this.src='https://placehold.co/400x300/065f46/ffffff?text=DUAL'" alt="Aidfest & Kineo" class="w-full h-full object-cover">
+							<img src="IMG_2009.jpeg" onerror="this.src='https://placehold.co/400x300/065f46/ffffff?text=DUAL'" alt="Aidfest & Kineo" class="w-full h-full object-cover">
 							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Dual Artists</span>
 						</div>
 						<h3 class="text-xl font-bold text-white">Aidfest & Kineo</h3>
@@ -205,8 +202,7 @@
 					<!-- JOE ICON Card -->
 					<div class="bg-[var(--color-dark-surface)] p-5 rounded-xl artist-card-flat" onclick="navigateTo('artist_detail', 'JOE_ICON')">
 						<div class="w-full h-48 bg-red-700 rounded-lg mb-4 overflow-hidden relative">
-							<!-- Image URL Placeholder -->
-							<img src="[INSERT_URL_HERE]" onerror="this.src='https://placehold.co/400x300/b91c1c/ffffff?text=JOE+ICON'" alt="Joe Icon" class="w-full h-full object-cover">
+							<img src="IMG_2003.jpeg" onerror="this.src='https://placehold.co/400x300/b91c1c/ffffff?text=JOE+ICON'" alt="Joe Icon" class="w-full h-full object-cover">
 							<span class="absolute top-2 right-2 bg-[var(--color-primary)] text-white text-xs font-bold px-2 py-1 rounded">Solo Artist</span>
 						</div>
 						<h3 class="text-xl font-bold text-white">Joe Icon</h3>
@@ -260,19 +256,18 @@
 	<footer class="bg-black py-8 px-4 sm:px-6 border-t border-gray-800">
 		<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-400">
 			<p class="mb-4 md:mb-0 text-sm text-center">&copy; 2025 Madness Entertainment. All rights reserved.</p>
-			<!-- Updated Social Media Links for Madness Entertainment -->
+			<!-- Official Social Media Links -->
 			<div class="flex space-x-6 text-xl">
-				<a href="[INSERT_URL_HERE]" target="_blank" aria-label="TikTok" class="hover:text-gray-300 transition"><i class="fab fa-tiktok"></i></a>
-				<a href="[INSERT_URL_HERE]" target="_blank" aria-label="YouTube" class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
-				<!-- Updated: Placeholder base link changed to https://facebook.com/ -->
-				<a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
-				<a href="[INSERT_URL_HERE]" target="_blank" aria-label="Twitter" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
-				<a href="[INSERT_URL_HERE]" target="_blank" aria-label="Instagram" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+				<a href="[INSERT_TIKTOK_URL_HERE]" target="_blank" aria-label="TikTok" class="hover:text-gray-300 transition"><i class="fab fa-tiktok"></i></a>
+				<a href="[INSERT_YOUTUBE_URL_HERE]" target="_blank" aria-label="YouTube" class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
+				<a href="[INSERT_FACEBOOK_URL_HERE]" target="_blank" aria-label="Facebook" class="hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+				<a href="[INSERT_X_URL_HERE]" target="_blank" aria-label="Twitter (X)" class="hover:text-blue-400 transition"><i class="fab fa-x-twitter"></i></a>
+				<a href="[INSERT_INSTAGRAM_URL_HERE]" target="_blank" aria-label="Instagram" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
 			</div>
 		</div>
 	</footer>
 
-	<!-- Booking Modal (Kept as a Modal since it's a form/action) -->
+	<!-- Booking Modal -->
 	<div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center p-4" onclick="if(event.target.id === 'booking-modal') hideModal('booking-modal')">
 		<div class="bg-[var(--color-dark-surface)] rounded-xl w-full max-w-md p-6 md:p-8 transform transition-all duration-300 scale-95 opacity-0 relative overflow-y-auto max-h-[90vh]" id="booking-modal-content">
 			<button onclick="hideModal('booking-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl z-10">&times;</button>
@@ -323,27 +318,27 @@
 	</div>
 
 	<script>
-		// --- DATA STRUCTURE ---
+		// --- DATA STRUCTURE (CLEANED AND POLISHED) ---
 		const ARTIST_DATA = {
 			'JAEKEV': {
 				name: 'JAEKEV',
 				role: 'Lead Manager & Content Creator',
-				bio: 'JAEKEV is the strategic mind guiding Madness Entertainment\'s operations. He focuses on brand vision and content production, especially for YouTube and digital platforms. His leadership is key to the group\'s rapid growth and professional standing in the Malawian music industry.',
-				image: '[INSERT_JAEKEV_PROFILE_IMAGE_URL_HERE]', // Placeholder URL
+				bio: 'JAEKEV is the strategic mind guiding Madness Entertainment\'s operations. He focuses on brand vision and content production, especially for YouTube and digital platforms. His leadership is key to the group\'s rapid growth and professional standing in the Malawian music industry. He is also a professional photographer at optical photography.',
+				image: 'IMG_2005.jpeg', // YOUR FILE: Ensure this file is uploaded to your hosting environment root.
 				imagePlaceholder: 'https://placehold.co/400x600/27272a/ffffff?text=JAEKEV',
 				type: 'management',
 				latestContent: [
-					{ title: 'The 5 Biggest Mistakes Malawian Artists Make (Video)', link: '[INSERT_VIDEO_LINK_HERE]', icon: 'fab fa-youtube' },
-					{ title: 'Behind the Scenes: Charizma\'s New Album (Blog)', link: '[INSERT_BLOG_LINK_HERE]', icon: 'fa-solid fa-file-lines' },
+					{ title: 'KELL KAY plays Truth or Drink', link: 'https://youtu.be/1udxPlgcTZI?si=y9gp1V-m4rzwA-Jw', icon: 'fab fa-youtube' },
+					{ title: 'Behind the Scenes: Charizma\'s New song (Blog)', link: '[INSERT_BLOG_LINK_HERE]', icon: 'fa-solid fa-file-lines' },
 					{ title: 'Podcast: Marketing Music in Africa', link: '[INSERT_PODCAST_LINK_HERE]', icon: 'fa-solid fa-microphone-lines' },
 					{ title: 'How We Built Madness Ent. (E-book)', link: '[INSERT_EBOOK_LINK_HERE]', icon: 'fa-solid fa-book' },
 				],
-				// Placeholder embed for latest YouTube video
+				// IMPORTANT: Replace this src with the embed link for the YouTube video
 				latestVideoEmbed: `<iframe class="w-full aspect-video rounded-xl shadow-2xl" src="[INSERT_YOUTUBE_EMBED_URL_HERE]" title="JAEKEV YouTube Placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
 				socials: [
-					{ platform: 'Twitter', icon: 'fab fa-twitter', link: '[INSERT_TWITTER_URL_HERE]' },
-					{ platform: 'LinkedIn', icon: 'fab fa-linkedin-in', link: '[INSERT_LINKEDIN_URL_HERE]' },
-					{ platform: 'YouTube', icon: 'fab fa-youtube', link: '[INSERT_YOUTUBE_URL_HERE]' },
+					{ platform: 'X (Twitter)', icon: 'fab fa-x-twitter', link: 'https://x.com/jaakevmadness?s=21' },
+					{ platform: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/share/17GkSGeZNJ/?mibextid=wwXIfr' },
+					{ platform: 'YouTube', icon: 'fab fa-youtube', link: 'https://youtube.com/@madnessentertainment8765?si=52bRoYJoR6cieoI5' },
 				],
 				streaming: []
 			},
@@ -351,70 +346,73 @@
 				name: 'Charizma Madness',
 				role: 'Artist & Co-Founder',
 				bio: 'A founding artist and creative powerhouse, Charizma Madness is known for his versatile style and lyrical depth. He successfully blends traditional Malawian rhythms with modern hip-hop and R&B, making him one of the most respected voices in the collective. He actively mentors emerging talent within Madness Entertainment.',
-				image: '[INSERT_CHARIZMA_PROFILE_IMAGE_URL_HERE]', // Placeholder URL
+				image: 'IMG_2006.jpeg', // YOUR FILE: Ensure this file is uploaded.
 				imagePlaceholder: 'https://placehold.co/400x600/4c1d95/ffffff?text=CHARIZMA',
 				type: 'artist',
 				latestMusic: {
-					title: 'Nthawi Yanga (My Time)',
-					// Spotify Placeholder Embed
+					title: 'Big stepper',
+					// IMPORTANT: Replace this src with the Spotify embed link
 					embed: `<iframe class="w-full rounded-xl shadow-2xl" style="border:0;" src="[INSERT_SPOTIFY_EMBED_URL_HERE]" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
 				},
 				socials: [
-					// Updated: Placeholder base link changed to https://facebook.com/
-					{ platform: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://facebook.com/' }, 
-					{ platform: 'Instagram', icon: 'fab fa-instagram', link: '[INSERT_INSTAGRAM_URL_HERE]' },
-					{ platform: 'TikTok', icon: 'fab fa-tiktok', link: '[INSERT_TIKTOK_URL_HERE]' },
+					{ platform: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/share/1AFw4ddie9/?mibextid=wwXIfr' }, 
+					{ platform: 'Instagram', icon: 'fab fa-instagram', link: 'https://www.instagram.com/charisma_madness?igsh=YWsxYjFxYzltMW1q' },
+					{ platform: 'TikTok', icon: 'fab fa-tiktok', link: 'https://www.tiktok.com/@charisma_madness?_r=1&_t=ZM-91JCkJRqSE8' },
 				],
 				streaming: [
-					{ platform: 'Spotify', icon: 'fab fa-spotify', link: '[INSERT_SPOTIFY_URL_HERE]' },
-					{ platform: 'Apple Music', icon: 'fab fa-apple', link: '[INSERT_APPLE_MUSIC_URL_HERE]' }
+					{ platform: 'Spotify (Artist Page)', icon: 'fab fa-spotify', link: 'https://open.spotify.com/artist/66IwLmIgqsJUSkHhQOdCH0?si=EIj4Is5lRuu6VruRnBs8_A' },
+					{ platform: 'Apple Music (Artist Page)', icon: 'fab fa-apple', link: '[INSERT_APPLE_MUSIC_CHARIZMA_URL_HERE]' }
 				]
 			},
 			'DUAL': {
 				name: 'Aidfest & Kineo',
 				role: 'Dual Pair Artists',
 				bio: 'Aidfest and Kineo form the explosive dual pair of Madness Entertainment. Their collaborative dynamic features Aidfest\'s melodic finesse and Kineo\'s sharp, rhythmic delivery, resulting in hit singles and energetic live performances. They are masters of blending different musical landscapes.',
-				image: '[INSERT_DUAL_PROFILE_IMAGE_URL_HERE]', // Placeholder URL
+				image: 'IMG_2009.jpeg', // YOUR FILE: Ensure this file is uploaded.
 				imagePlaceholder: 'https://placehold.co/400x600/065f46/ffffff?text=DUO',
 				type: 'artist',
 				latestMusic: {
 					title: 'Wadula Remix (The Breakout)',
-					// SoundCloud Placeholder Embed
+					// IMPORTANT: Replace this src with the Soundcloud embed link
 					embed: `<iframe class="w-full rounded-xl shadow-2xl" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="[INSERT_SOUNDCLOUD_EMBED_URL_HERE]"></iframe>`
 				},
 				socials: [
-					// Updated: Separated links for Aidfest and Kineo with https://facebook.com/ base
-					{ platform: 'Aidfest (FB)', icon: 'fab fa-facebook-f', link: 'https://facebook.com/' },
-					{ platform: 'Kineo (FB)', icon: 'fab fa-facebook-f', link: 'https://facebook.com/' },
-					{ platform: 'Aidfest (IG)', icon: 'fab fa-instagram', link: '[INSERT_AIDFEST_INSTAGRAM_URL_HERE]' },
-					{ platform: 'Kineo (IG)', icon: 'fab fa-instagram', link: '[INSERT_KINEO_INSTAGRAM_URL_HERE]' },
-					{ platform: 'Dual Twitter', icon: 'fab fa-twitter', link: '[INSERT_TWITTER_URL_HERE]' },
+					{ platform: 'Aidfest (FB)', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/share/1D5WFf7gvQ/?mibextid=wwXIfr' },
+					{ platform: 'Kineo (FB)', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/profile.php?id=100076166140555&mibextid=wwXIfr&mibextid=wwXIfr' },
+					{ platform: 'Aidfest (IG)', icon: 'fab fa-instagram', link: 'https://www.instagram.com/aidfest_madness?igsh=OHJ0ODZmaG1pc2N3' },
+					{ platform: 'Kineo (IG)', icon: 'fab fa-instagram', link: 'https://www.instagram.com/kineo_madness?igsh=MTRvcW04ZDE5ZjVlMA==' },
+					{ platform: 'Aidfest (X)', icon: 'fab fa-x-twitter', link: 'https://x.com/aidfest_madness?s=21' },
+					{ platform: 'Kineo (X)', icon: 'fab fa-x-twitter', link: 'https://x.com/kineo_madness?s=21' },
+					{ platform: 'Aidfest (TikTok)', icon: 'fab fa-tiktok', link: 'https://www.tiktok.com/@aidfestmadness?_r=1&_t=ZM-91JBmCXCjJD' },
+					{ platform: 'Kineo (TikTok)', icon: 'fab fa-tiktok', link: 'https://www.tiktok.com/@kineomadness?_r=1&_t=ZM-91JBpxs29yl' },
 				],
 				streaming: [
-					{ platform: 'YouTube', icon: 'fab fa-youtube', link: '[INSERT_YOUTUBE_URL_HERE]' },
-					{ platform: 'SoundCloud', icon: 'fab fa-soundcloud', link: '[INSERT_SOUNDCLOUD_URL_HERE]' }
+					{ platform: 'Spotify (Duo)', icon: 'fab fa-spotify', link: 'https://open.spotify.com/artist/2CsRYhpRtqyC4efGtnslcd?si=syOFUbgBTj6pA4vq7WuqBg' },
+					{ platform: 'YouTube', icon: 'fab fa-youtube', link: 'https://youtu.be/JePo80z7biU?si=sZq7wo3YEoE8DePh' },
+					{ platform: 'Apple Music (Kineo)', icon: 'fab fa-apple', link: 'https://music.apple.com/mw/artist/kineo-madness/1689569523' },
+					{ platform: 'Apple Music (Aidfest)', icon: 'fab fa-apple', link: 'https://music.apple.com/mw/artist/aidfest-madness/1690014362' }
 				]
 			},
 			'JOE_ICON': {
 				name: 'Joe Icon',
 				role: 'Solo Sensation',
 				bio: 'Joe Icon is the highly acclaimed solo artist signed to the team. His music is characterized by profound storytelling, catchy pop sensibilities, and a powerful, unique vocal tone. He represents the future sound of Malawian contemporary music.',
-				image: '[INSERT_JOE_ICON_PROFILE_IMAGE_URL_HERE]', // Placeholder URL
+				image: 'IMG_2003.jpeg', // YOUR FILE: Ensure this file is uploaded.
 				imagePlaceholder: 'https://placehold.co/400x600/b91c1c/ffffff?text=JOE',
 				type: 'artist',
 				latestMusic: {
-					title: 'Ndikhulupirire (Believe Me)',
-					// Apple Music Placeholder Embed
+					title: 'Pang\'ono',
+					// IMPORTANT: Replace this src with the Apple Music embed link
 					embed: `<iframe class="w-full rounded-xl shadow-2xl" allow="autoplay *; encrypted-media *;  fullscreen *; clipboard-write" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="[INSERT_APPLE_MUSIC_EMBED_URL_HERE]"></iframe>`
 				},
 				socials: [
-					// Updated: Placeholder base link changed to https://facebook.com/
-					{ platform: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://facebook.com/' }, 
-					{ platform: 'Instagram', icon: 'fab fa-instagram', link: '[INSERT_INSTAGRAM_URL_HERE]' },
+					{ platform: 'TikTok', icon: 'fab fa-tiktok', link: 'https://www.tiktok.com/@joe_ikon?_r=1&_t=ZM-91JBvBXrZBw' },
+					{ platform: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/share/1PNYY9hx6d/?mibextid=wwXIfr' },
+					{ platform: 'Instagram', icon: 'fab fa-instagram', link: 'https://www.instagram.com/696p69?igsh=MTM0eDYzc2ZzejVxNw%3D%3D&utm_source=qr' },
 				],
 				streaming: [
-					{ platform: 'Spotify', icon: 'fab fa-spotify', link: '[INSERT_SPOTIFY_URL_HERE]' },
-					{ platform: 'SoundCloud', icon: 'fab fa-soundcloud', link: '[INSERT_SOUNDCLOUD_URL_HERE]' }
+					{ platform: 'Spotify', icon: 'fab fa-spotify', link: 'https://open.spotify.com/artist/7MtFbVZ59RrSPpnuNaVSjD?si=N2ZtEIzER_SaSNOKAd-1ug' },
+					{ platform: 'YouTube', icon: 'fab fa-youtube', link: 'https://youtu.be/cJSzPJHynSk?si=-OZBeqJTU2oTgOXB' }
 				]
 			},
 			'about-madness': {
@@ -425,6 +423,7 @@
 			}
 		};
 
+		// --- Core Application Logic (Refined) ---
 		let currentState = 'home';
 		const sections = {
 			'home': document.getElementById('home'),
@@ -439,15 +438,16 @@
 		const generalModalContent = document.getElementById('general-modal-content');
 		const generalModalBody = document.getElementById('general-modal-body');
 
-		// --- NAVIGATION AND VIEW MANAGEMENT ---
-
 		/**
 		 * Switches the view between main sections (home, artists, artist_detail, contact).
 		 * @param {string} view - The ID of the section to show.
 		 * @param {string} [artistKey=null] - Optional key for artist detail page generation.
 		 */
 		function navigateTo(view, artistKey = null) {
-			if (!sections[view]) return;
+			if (!sections[view]) {
+				console.error("Invalid view requested:", view);
+				return;
+			}
 
 			// Hide all sections
 			Object.values(sections).forEach(section => {
@@ -481,12 +481,11 @@
 					<!-- Header Section -->
 					<div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left p-6 bg-[var(--color-dark-surface)] rounded-xl shadow-xl">
 						
-						<!-- NEW MODERN IMAGE CONTAINER -->
+						<!-- MODERN IMAGE CONTAINER -->
 						<div class="md:mr-8 mb-6 md:mb-0 w-full max-w-xs sm:max-w-sm">
-							<!-- REMOVED: Red border from artist image container -->
 							<div class="artist-image-container w-full h-80 sm:h-96 rounded-xl">
-								<!-- Image URL Placeholder: uses the placeholder image if the user hasn't inserted a URL yet -->
-								<img src="${data.image}" onerror="this.src='${data.imagePlaceholder}'" alt="${data.name}" class="object-cover w-full h-full">
+								<!-- The JPEG image line -->
+								<img src="${data.image}" onerror="this.src='${data.imagePlaceholder}'" alt="${data.name} profile image" class="object-cover w-full h-full">
 								<div class="image-fade-overlay"></div>
 							</div>
 						</div>
@@ -522,7 +521,7 @@
 								<h3 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Connect with ${data.name}</h3>
 								<div class="flex flex-wrap gap-3">
 									${data.socials.map(s => `
-										<a href="${s.link}" target="_blank" class="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-full transition text-sm">
+										<a href="${s.link}" target="_blank" class="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-full transition text-sm" aria-label="${s.platform}">
 											<i class="${s.icon}"></i>
 											<span>${s.platform}</span>
 										</a>
@@ -536,7 +535,7 @@
 								<h3 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Stream Now</h3>
 								<div class="flex flex-wrap gap-3">
 									${data.streaming.map(s => `
-										<a href="${s.link}" target="_blank" class="flex items-center space-x-2 bg-white text-black font-semibold hover:bg-gray-200 px-4 py-2 rounded-full transition text-sm">
+										<a href="${s.link}" target="_blank" class="flex items-center space-x-2 bg-white text-black font-semibold hover:bg-gray-200 px-4 py-2 rounded-full transition text-sm" aria-label="${s.platform} streaming link">
 											<i class="${s.icon}"></i>
 											<span>${s.platform}</span>
 										</a>
@@ -611,19 +610,17 @@
 		// --- FORM SUBMISSION HANDLERS (Placeholders) ---
 
 		function submitBookingForm() {
-			// Placeholder logic: In a real app, this would use fetch() to send data
+			// Placeholder logic: In a real app, this would send data to a backend endpoint
 			const messageElement = document.getElementById('booking-message');
 			messageElement.innerHTML = 'Thank you! Your booking request has been sent. We will contact you soon.';
 			messageElement.classList.remove('hidden');
-			// document.querySelector('#booking-modal form').reset(); // You can uncomment this to clear the form
 		}
 		
 		function submitContactForm() {
-			// Placeholder logic: In a real app, this would use fetch() to send data
+			// Placeholder logic: In a real app, this would send data to a backend endpoint
 			const messageElement = document.getElementById('contact-message');
 			messageElement.innerHTML = 'Thank you for your message! We will be in touch shortly.';
 			messageElement.classList.remove('hidden');
-			// document.querySelector('#contact form').reset(); // You can uncomment this to clear the form
 		}
 
 
@@ -635,4 +632,5 @@
 	</script>
 </body>
 </html>
+
 
